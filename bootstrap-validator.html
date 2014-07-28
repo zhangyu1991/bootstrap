@@ -1,0 +1,727 @@
+﻿<html>
+	<head>
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+	<link href="assetscss/ace-ie.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<!--[if IE]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+		<link rel="stylesheet" href="assets/css/bootstrapValidator.min.css">
+		<link rel="stylesheet" href="assets/css/github.css">
+	
+
+	</head>
+
+<body>
+
+				
+<div class="breadcrumbs" id="breadcrumbs">
+					
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">Jquery Tree</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+
+					<div class="page-content">
+					
+					<div class="bv-example">
+                            <ul class="nav nav-tabs">
+                              <li ><a data-toggle="tab" href="#example-tab">Try it</a></li>
+                                <li class="active"><a data-toggle="tab" href="#html-tab">HTML</a></li>
+                                <li><a data-toggle="tab" href="#js-tab">JS</a></li>
+                                <li><a data-toggle="tab" href="#validators-tab">validators</a></li>
+                               
+                            </ul>
+
+
+                            <div class="tab-content">
+                                <div id="example-tab" class="tab-pane">
+                                    <form class="form-horizontal bv-form" method="post" id="registrationForm" novalidate="novalidate">
+                                        <div class="form-group has-feedback">
+                                            <label class="col-lg-3 control-label">Username</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" name="username" class="form-control" data-bv-field="username"><i style="display: none;" class="form-control-feedback" data-bv-icon-for="username"></i>
+                                            <small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="username" data-bv-result="NOT_VALIDATED">The username is required and cannot be empty</small><small style="display: none;" class="help-block" data-bv-validator="stringLength" data-bv-for="username" data-bv-result="NOT_VALIDATED">The username must be more than 6 and less than 30 characters long</small><small style="display: none;" class="help-block" data-bv-validator="regexp" data-bv-for="username" data-bv-result="NOT_VALIDATED">The username can only consist of alphabetical and number</small><small style="display: none;" class="help-block" data-bv-validator="different" data-bv-for="username" data-bv-result="NOT_VALIDATED">The username and password cannot be the same as each other</small></div>
+                                        </div>
+
+                                        <div class="form-group has-feedback">
+                                            <label class="col-lg-3 control-label">Email address</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" name="email" class="form-control" data-bv-field="email"><i style="display: none;" class="form-control-feedback" data-bv-icon-for="email"></i>
+                                            <small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="email" data-bv-result="NOT_VALIDATED">The email address is required and cannot be empty</small><small style="display: none;" class="help-block" data-bv-validator="emailAddress" data-bv-for="email" data-bv-result="NOT_VALIDATED">The email address is not a valid</small></div>
+                                        </div>
+
+                                        <div class="form-group has-feedback">
+                                            <label class="col-lg-3 control-label">Password</label>
+                                            <div class="col-lg-5">
+                                                <input type="password" name="password" class="form-control" data-bv-field="password"><i style="display: none;" class="form-control-feedback" data-bv-icon-for="password"></i>
+                                            <small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="password" data-bv-result="NOT_VALIDATED">The password is required and cannot be empty</small><small style="display: none;" class="help-block" data-bv-validator="different" data-bv-for="password" data-bv-result="NOT_VALIDATED">The password cannot be the same as username</small><small style="display: none;" class="help-block" data-bv-validator="stringLength" data-bv-for="password" data-bv-result="NOT_VALIDATED">The password must have at least 8 characters</small></div>
+                                        </div>
+
+                                        <div class="form-group has-feedback">
+                                            <label class="col-lg-3 control-label">Gender</label>
+                                            <div class="col-lg-5">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" value="male" name="gender" data-bv-field="gender"> Male
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" value="female" name="gender" data-bv-field="gender"> Female
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" value="other" name="gender" data-bv-field="gender"> Other
+                                                    </label><i style="display: none;" class="form-control-feedback" data-bv-icon-for="gender"></i>
+                                                </div>
+                                            <small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="gender" data-bv-result="NOT_VALIDATED">The gender is required</small></div>
+                                        </div>
+
+                                        <div class="form-group has-feedback">
+                                            <label class="col-lg-3 control-label">Date of birth</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" placeholder="YYYY/MM/DD" name="birthday" class="form-control" data-bv-field="birthday"><i style="display: none;" class="form-control-feedback" data-bv-icon-for="birthday"></i>
+                                            <small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="birthday" data-bv-result="NOT_VALIDATED">The date of birth is required</small><small style="display: none;" class="help-block" data-bv-validator="date" data-bv-for="birthday" data-bv-result="NOT_VALIDATED">The date of birth is not valid</small></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-lg-9 col-lg-offset-3">
+                                                <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+                                                <button class="btn btn-default" type="submit">Sign up</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div id="html-tab" class="tab-pane active">
+                                	<div class="highlight"><pre>
+                                	<code data-lang="html" class="language-html">
+                <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"registrationForm"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">class=</span><span class="s">"form-horizontal"</span> <span class="na">action=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-lg-3 control-label"</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-5"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-lg-3 control-label"</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-5"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-lg-3 control-label"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-5"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"password"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-lg-3 control-label"</span><span class="nt">&gt;</span>Gender<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-5"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;</span>
+                                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"gender"</span> <span class="na">value=</span><span class="s">"male"</span> <span class="nt">/&gt;</span> Male
+                                <span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;</span>
+                                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"gender"</span> <span class="na">value=</span><span class="s">"female"</span> <span class="nt">/&gt;</span> Female
+                                <span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;</span>
+                                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"gender"</span> <span class="na">value=</span><span class="s">"other"</span> <span class="nt">/&gt;</span> Other
+                                <span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-lg-3 control-label"</span><span class="nt">&gt;</span>Date of birth<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-5"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"birthday"</span>
+                                <span class="na">placeholder=</span><span class="s">"YYYY/MM/DD"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-9 col-lg-offset-3"</span><span class="nt">&gt;</span>
+<span class="hll">                            <span class="c">&lt;!-- Do NOT use name="submit" or id="submit" for the Submit button --&gt;</span>
+</span>                            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Sign up<span class="nt">&lt;/button&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/form&gt;</span>
+										</code>
+									</pre>
+									</div>
+								</div>
+		  <div id="js-tab" class="tab-pane">
+			<pre>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">    <span class="nx">$</span><span class="p">(</span><span class="s1">'#registrationForm'</span><span class="p">).</span><span class="nx">bootstrapValidator</span><span class="p">({</span>
+</span><span class="hll">        <span class="c1">// To use feedback icons, ensure that you use Bootstrap v3.1.0 or later</span>
+</span>        <span class="nx">feedbackIcons</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="s1">'glyphicon glyphicon-ok'</span><span class="p">,</span>
+            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">'glyphicon glyphicon-remove'</span><span class="p">,</span>
+            <span class="nx">validating</span><span class="o">:</span> <span class="s1">'glyphicon glyphicon-refresh'</span>
+        <span class="p">},</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">message</span><span class="o">:</span> <span class="s1">'The username is not valid'</span><span class="p">,</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The username is required and cannot be empty'</span>
+                    <span class="p">},</span>
+                    <span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">min</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+                        <span class="nx">max</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The username must be more than 6 and less than 30 characters long'</span>
+                    <span class="p">},</span>
+                    <span class="nx">regexp</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">regexp</span><span class="o">:</span> <span class="sr">/^[a-zA-Z0-9]+$/</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The username can only consist of alphabetical and number'</span>
+                    <span class="p">},</span>
+                    <span class="nx">different</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">field</span><span class="o">:</span> <span class="s1">'password'</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The username and password cannot be the same as each other'</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The email address is required and cannot be empty'</span>
+                    <span class="p">},</span>
+                    <span class="nx">emailAddress</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The email address is not a valid'</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">password</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The password is required and cannot be empty'</span>
+                    <span class="p">},</span>
+                    <span class="nx">different</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">field</span><span class="o">:</span> <span class="s1">'username'</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The password cannot be the same as username'</span>
+                    <span class="p">},</span>
+                    <span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">min</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The password must have at least 8 characters'</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">birthday</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The date of birth is required'</span>
+                    <span class="p">},</span>
+                    <span class="nx">date</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">format</span><span class="o">:</span> <span class="s1">'YYYY/MM/DD'</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The date of birth is not valid'</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">gender</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The gender is required'</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+	
+
+			</pre>
+		  </div>
+			<div id="validators-tab" class="tab-pane">
+	
+       
+            <div class="bv-content">
+                <section>
+                    <h2 id="validators">Validators<a href="#validators" title="Validators" style="display: inline;">#</a></h2>
+
+                    <p>BootstrapValidator comes with various built-in validators listed in the alphabetical order as following:</p>
+
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>From</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>1</td>
+                                <td><a href="/validators/base64/">base64</a></td>
+                                <td>0.3.2</td>
+                                <td>Validate a base64 encoded string</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>2</td>
+                                <td><a href="/validators/between/">between</a></td>
+                                <td>0.1.0</td>
+                                <td>Check if the input value is between (strictly or not) two given numbers</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>3</td>
+                                <td><a href="/validators/callback/">callback</a></td>
+                                <td>0.2.0</td>
+                                <td>Return the validity from a callback method</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>4</td>
+                                <td><a href="/validators/choice/">choice</a></td>
+                                <td>0.3.0</td>
+                                <td>Check if the number of checked boxes are less or more than a given number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>5</td>
+                                <td><a href="/validators/creditCard/">creditCard</a></td>
+                                <td>0.2.0</td>
+                                <td>Validate a credit card number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>6</td>
+                                <td><a href="/validators/cusip/">cusip</a></td>
+                                <td>0.4.5</td>
+                                <td>Validate a CUSIP</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>7</td>
+                                <td><a href="/validators/cvv/">cvv</a></td>
+                                <td>0.3.2</td>
+                                <td>Validate a CVV number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>8</td>
+                                <td><a href="/validators/date/">date</a></td>
+                                <td>0.3.1</td>
+                                <td>Validate date</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>9</td>
+                                <td><a href="/validators/different/">different</a></td>
+                                <td>0.2.0</td>
+                                <td>Return true if the input value is different with given field's value</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>10</td>
+                                <td><a href="/validators/digits/">digits</a></td>
+                                <td>0.1.0</td>
+                                <td>Return true if the value contains only digits</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>11</td>
+                                <td><a href="/validators/ean/">ean</a></td>
+                                <td>0.4.4</td>
+                                <td>Validate an EAN (International Article Number)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>12</td>
+                                <td><a href="/validators/emailAddress/">emailAddress</a></td>
+                                <td>0.1.0</td>
+                                <td>Validate an email address</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>13</td>
+                                <td><a href="/validators/file/">file</a></td>
+                                <td>0.4.3</td>
+                                <td>Validate file</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>14</td>
+                                <td><a href="/validators/greaterThan/">greaterThan</a></td>
+                                <td>0.1.0</td>
+                                <td>Return true if the value is greater than or equals to given number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>15</td>
+                                <td><a href="/validators/grid/">grid</a></td>
+                                <td>0.4.4</td>
+                                <td>Validate a GRId (Global Release Identifier)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>16</td>
+                                <td><a href="/validators/hex/">hex</a></td>
+                                <td>0.4.0</td>
+                                <td>Validate a hexadecimal number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>17</td>
+                                <td><a href="/validators/hexColor/">hexColor</a></td>
+                                <td>0.1.0</td>
+                                <td>Validate a hex color</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>18</td>
+                                <td><a href="/validators/iban/">iban</a></td>
+                                <td>0.4.0</td>
+                                <td>Validate an International Bank Account Number (IBAN)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>19</td>
+                                <td><a href="/validators/id/">id</a></td>
+                                <td>0.4.5</td>
+                                <td>Validate identification number. Support 25 countries</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>20</td>
+                                <td><a href="/validators/identical/">identical</a></td>
+                                <td>0.1.0</td>
+                                <td>Check if the value is the same as one of particular field</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>21</td>
+                                <td><a href="/validators/imei/">imei</a></td>
+                                <td>0.4.4</td>
+                                <td>Validate an IMEI (International Mobile Station Equipment Identity)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>22</td>
+                                <td><a href="/validators/integer/">integer</a></td>
+                                <td>0.4.0</td>
+                                <td>Validate an integer number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>23</td>
+                                <td><a href="/validators/ip/">ip</a></td>
+                                <td>0.3.2</td>
+                                <td>Validate an IP address. Support both IPv4 and IPv6</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>24</td>
+                                <td><a href="/validators/isbn/">isbn</a></td>
+                                <td>0.3.2</td>
+                                <td>Validate an ISBN (International Standard Book Number). Support both ISBN 10 and ISBN 13</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>25</td>
+                                <td><a href="/validators/isin/">isin</a></td>
+                                <td>0.4.5</td>
+                                <td>Validate an ISIN (International Securities Identification Number)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>26</td>
+                                <td><a href="/validators/ismn/">ismn</a></td>
+                                <td>0.4.4</td>
+                                <td>Validate an ISMN (International Standard Music Number)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>27</td>
+                                <td><a href="/validators/issn/">issn</a></td>
+                                <td>0.4.4</td>
+                                <td>Validate an ISSN (International Standard Serial Number)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>28</td>
+                                <td><a href="/validators/lessThan/">lessThan</a></td>
+                                <td>0.1.0</td>
+                                <td>Return true if the value is less than or equals to given number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>29</td>
+                                <td><a href="/validators/mac/">mac</a></td>
+                                <td>0.3.2</td>
+                                <td>Validate a MAC address</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>30</td>
+                                <td><a href="/validators/notEmpty/">notEmpty</a></td>
+                                <td>0.1.0</td>
+                                <td>Check if the value is empty</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>31</td>
+                                <td><a href="/validators/numeric/">numeric</a></td>
+                                <td>0.4.0</td>
+                                <td>Check if the value is numeric</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>32</td>
+                                <td><a href="/validators/phone/">phone</a></td>
+                                <td>0.3.2</td>
+                                <td>Validate a phone number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>33</td>
+                                <td><a href="/validators/regexp/">regexp</a></td>
+                                <td>0.1.0</td>
+                                <td>Check if the value matches given Javascript regular expression</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>34</td>
+                                <td><a href="/validators/remote/">remote</a></td>
+                                <td>0.1.0</td>
+                                <td>Perform remote checking via Ajax request</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>35</td>
+                                <td><a href="/validators/rtn/">rtn</a></td>
+                                <td>0.4.5</td>
+                                <td>Validate a RTN (Routing transit number)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>36</td>
+                                <td><a href="/validators/sedol/">sedol</a></td>
+                                <td>0.4.5</td>
+                                <td>Validate a SEDOL (Stock Exchange Daily Official List)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>37</td>
+                                <td><a href="/validators/siren/">siren</a></td>
+                                <td>0.4.2</td>
+                                <td>Validate a Siren number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>38</td>
+                                <td><a href="/validators/siret/">siret</a></td>
+                                <td>0.4.2</td>
+                                <td>Validate a Siret number</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>39</td>
+                                <td><a href="/validators/step/">step</a></td>
+                                <td>0.3.2</td>
+                                <td>Check if the value is valid step one</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>40</td>
+                                <td><a href="/validators/stringCase/">stringCase</a></td>
+                                <td>0.4.0</td>
+                                <td>Check if a string is a lower or upper case one</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>41</td>
+                                <td><a href="/validators/stringLength/">stringLength</a></td>
+                                <td>0.1.0</td>
+                                <td>Validate the length of a string</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>42</td>
+                                <td><a href="/validators/uri/">uri</a></td>
+                                <td>0.1.0</td>
+                                <td>Validate an URL address</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>43</td>
+                                <td><a href="/validators/uuid/">uuid</a></td>
+                                <td>0.4.0</td>
+                                <td>Validate an UUID, support v3, v4, v5</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>44</td>
+                                <td><a href="/validators/vat/">vat</a></td>
+                                <td>0.4.3</td>
+                                <td>Validate VAT number. Support 32 countries</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>45</td>
+                                <td><a href="/validators/vin/">vin</a></td>
+                                <td>0.4.2</td>
+                                <td>Validate an US VIN (Vehicle Identification Number)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>46</td>
+                                <td><a href="/validators/zipCode/">zipCode</a></td>
+                                <td>0.1.0</td>
+                                <td>Validate a zip code</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+    
+
+
+			</div>
+						</div>
+					</div>
+		</div>
+					
+				
+
+				
+
+
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
+		</script>
+		
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<script type="text/javascript">
+ 			window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+		</script>
+		<![endif]-->
+
+
+	<script src="assets/js/ace-extra.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/ace.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrapValidator.js"></script>
+
+	<script>
+$(document).ready(function() {
+
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+  		window.parent.$("#iframepage").height($("body").height());
+	})
+    $('#registrationForm').bootstrapValidator({
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            username: {
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The username must be more than 6 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9]+$/,
+                        message: 'The username can only consist of alphabetical and number'
+                    },
+                    different: {
+                        field: 'password',
+                        message: 'The username and password cannot be the same as each other'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required and cannot be empty'
+                    },
+                    emailAddress: {
+                        message: 'The email address is not a valid'
+                    }
+                }
+            },
+            password: {
+            	container:'tooltip',
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required and cannot be empty'
+                    },
+                    different: {
+                        field: 'username',
+                        message: 'The password cannot be the same as username'
+                    },
+                    stringLength: {
+                        min: 8,
+                        message: 'The password must have at least 8 characters'
+                    }
+                }
+            },
+            birthday: {
+                validators: {
+                    notEmpty: {
+                        message: 'The date of birth is required'
+                    },
+                    date: {
+                        format: 'YYYY/MM/DD',
+                        message: 'The date of birth is not valid'
+                    }
+                }
+            },
+            gender: {
+                validators: {
+                    notEmpty: {
+                        message: 'The gender is required'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
