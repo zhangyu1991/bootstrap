@@ -1,33 +1,134 @@
-	<script type="text/javascript">
-		$('.form_datetime').datetimepicker({
-        language:  'zh-CN',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		forceParse: 0,
-        showMeridian: 1
-    });
-	$('.form_date').datetimepicker({
-        language:  'zh-CN',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0
-    });
-	$('.form_time').datetimepicker({
-        language:  'zh-CN',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 1,
-		minView: 0,
-		maxView: 1,
-		forceParse: 0
-    });
-	</script>
+<div id="example-tab" class="tab-pane active">
+	<form class="form-horizontal bv-form" method="post"
+		id="registrationForm" novalidate="novalidate">
+		<div class="form-group has-feedback">
+			<label class="col-lg-3 control-label">Username</label>
+			<div class="col-lg-5">
+				<input type="text" name="username" class="form-control"
+					data-bv-field="username"> <i style="display: none;"
+					class="form-control-feedback" data-bv-icon-for="username"></i> <small
+					style="display: none;" class="help-block"
+					data-bv-validator="notEmpty" data-bv-for="username"
+					data-bv-result="NOT_VALIDATED">The username is required and
+					cannot be empty</small><small style="display: none;" class="help-block"
+					data-bv-validator="stringLength" data-bv-for="username"
+					data-bv-result="NOT_VALIDATED">The username must be more
+					than 6 and less than 30 characters long</small><small
+					style="display: none;" class="help-block"
+					data-bv-validator="regexp" data-bv-for="username"
+					data-bv-result="NOT_VALIDATED">The username can only
+					consist of alphabetical and number</small><small style="display: none;"
+					class="help-block" data-bv-validator="different"
+					data-bv-for="username" data-bv-result="NOT_VALIDATED">The
+					username and password cannot be the same as each other</small>
+			</div>
+		</div>
+		<div class="form-group has-feedback">
+			<label class="col-lg-3 control-label">Username Ajax</label>
+			<div class="col-lg-5">
+				<input type="text" id="username_ajax" name="username_ajax"
+					class="form-control" data-bv-field="username_ajax" value="bbb">
+				<input type="hidden" value="bbb" id="old_username"> <i
+					style="display: none;" class="form-control-feedback"
+					data-bv-icon-for="username"></i> <small style="display: none;"
+					class="help-block" data-bv-validator="notEmpty"
+					data-bv-for="username" data-bv-result="NOT_VALIDATED">The
+					username is required and cannot be empty</small><small
+					style="display: none;" class="help-block"
+					data-bv-validator="stringLength" data-bv-for="username"
+					data-bv-result="NOT_VALIDATED">The username must be more
+					than 6 and less than 30 characters long</small><small
+					style="display: none;" class="help-block"
+					data-bv-validator="regexp" data-bv-for="username"
+					data-bv-result="NOT_VALIDATED">The username can only
+					consist of alphabetical and number</small><small style="display: none;"
+					class="help-block" data-bv-validator="different"
+					data-bv-for="username" data-bv-result="NOT_VALIDATED">The
+					username and password cannot be the same as each other</small>
+			</div>
+		</div>
+
+		<div class="form-group has-feedback">
+			<label class="col-lg-3 control-label">Email address</label>
+			<div class="col-lg-5">
+				<input type="text" name="email" class="form-control"
+					data-bv-field="email"><i style="display: none;"
+					class="form-control-feedback" data-bv-icon-for="email"></i> <small
+					style="display: none;" class="help-block"
+					data-bv-validator="notEmpty" data-bv-for="email"
+					data-bv-result="NOT_VALIDATED">The email address is
+					required and cannot be empty</small><small style="display: none;"
+					class="help-block" data-bv-validator="emailAddress"
+					data-bv-for="email" data-bv-result="NOT_VALIDATED">The
+					email address is not a valid</small>
+			</div>
+		</div>
+
+		<div class="form-group has-feedback">
+			<label class="col-lg-3 control-label">Password</label>
+			<div class="col-lg-5">
+				<input type="password" name="password" class="form-control"
+					data-bv-field="password"><i style="display: none;"
+					class="form-control-feedback" data-bv-icon-for="password"></i> <small
+					style="display: none;" class="help-block"
+					data-bv-validator="notEmpty" data-bv-for="password"
+					data-bv-result="NOT_VALIDATED">The password is required and
+					cannot be empty</small><small style="display: none;" class="help-block"
+					data-bv-validator="different" data-bv-for="password"
+					data-bv-result="NOT_VALIDATED">The password cannot be the
+					same as username</small><small style="display: none;" class="help-block"
+					data-bv-validator="stringLength" data-bv-for="password"
+					data-bv-result="NOT_VALIDATED">The password must have at
+					least 8 characters</small>
+			</div>
+		</div>
+
+		<div class="form-group has-feedback">
+			<label class="col-lg-3 control-label">Gender</label>
+			<div class="col-lg-5">
+				<div class="radio">
+					<label> <input type="radio" value="male" name="gender"
+						data-bv-field="gender"> Male
+					</label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" value="female" name="gender"
+						data-bv-field="gender"> Female
+					</label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" value="other" name="gender"
+						data-bv-field="gender"> Other
+					</label><i style="display: none;" class="form-control-feedback"
+						data-bv-icon-for="gender"></i>
+				</div>
+				<small style="display: none;" class="help-block"
+					data-bv-validator="notEmpty" data-bv-for="gender"
+					data-bv-result="NOT_VALIDATED">The gender is required</small>
+			</div>
+		</div>
+
+		<div class="form-group has-feedback">
+			<label class="col-lg-3 control-label">Date of birth</label>
+			<div class="col-lg-5">
+				<input type="text" placeholder="YYYY/MM/DD" name="birthday"
+					class="form-control" data-bv-field="birthday"><i
+					style="display: none;" class="form-control-feedback"
+					data-bv-icon-for="birthday"></i> <small style="display: none;"
+					class="help-block" data-bv-validator="notEmpty"
+					data-bv-for="birthday" data-bv-result="NOT_VALIDATED">The
+					date of birth is required</small><small style="display: none;"
+					class="help-block" data-bv-validator="date" data-bv-for="birthday"
+					data-bv-result="NOT_VALIDATED">The date of birth is not
+					valid</small>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-lg-9 col-lg-offset-3">
+				<!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+				<button class="btn btn-default" type="submit">Sign up</button>
+			</div>
+		</div>
+	</form>
+</div>
