@@ -1,112 +1,52 @@
-<script>
-$(document).ready(function() {
-
-	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-
-  		window.parent.$("#iframepage").height($("body").height());
-	})
-	
-	$("#username_ajax").on('init.field.bv', function(e, data) {
-            data.bv.updateStatus('username_ajax','VALID')
-        })
-	
-    $('#registrationForm').bootstrapValidator({
-        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            username: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'The username is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: 'The username must be more than 6 and less than 30 characters long'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9]+$/,
-                        message: 'The username can only consist of alphabetical and number'
-                    },
-                    different: {
-                        field: 'password',
-                        message: 'The username and password cannot be the same as each other'
-                    }
-                }
-            },
-            username_ajax:{ 	
-            	message: 'The username is not valid',
-            	trigger: 'blur',
-            	validators: {
-                    // The validator will create an Ajax request
-                    // sending { username: 'its value' } to the back-end
-                    callback: {
-                        message: 'The username is not available',
-                        callback: function(value, validator){
-                        	var old_username=$("#old_username").val();
-                        	if(value==old_username){
-                        		validator.updateStatus('username_ajax','VALID')
-                        	}
-                        	return true;		
-                        }
-                    },
-                    remote: {
-                        message: 'ajax valitor',
-                        url: 'validator.validator'
-                    }
-                    
-                }
-            },
-            email: {
-                validators: {
-                    notEmpty: {
-                        message: 'The email address is required and cannot be empty'
-                    },
-                    emailAddress: {
-                        message: 'The email address is not a valid'
-                    }
-                }
-            },
-            password: {
-            	container:'tooltip',
-                validators: {
-                    notEmpty: {
-                        message: 'The password is required and cannot be empty'
-                    },
-                    different: {
-                        field: 'username',
-                        message: 'The password cannot be the same as username'
-                    },
-                    stringLength: {
-                        min: 8,
-                        message: 'The password must have at least 8 characters'
-                    }
-                }
-            },
-            birthday: {
-                validators: {
-                    notEmpty: {
-                        message: 'The date of birth is required'
-                    },
-                    date: {
-                        format: 'YYYY/MM/DD',
-                        message: 'The date of birth is not valid'
-                    }
-                }
-            },
-            gender: {
-                validators: {
-                    notEmpty: {
-                        message: 'The gender is required'
-                    }
-                }
-            }
-        }
-    });
-});
-</script>
+<form novalidate="" class="form-horizontal">
+	<div class="control-group">
+		<label for="email" class="control-label">Email address</label>
+		<div class="controls">
+			<input type="email" required="" id="email" name="email">
+			<p class="help-block">Email address we can contact you on</p>
+		</div>
+	</div>
+	<div class="control-group">
+		<label for="emailAgain" class="control-label">Email again</label>
+		<div class="controls">
+			<input type="email" name="emailAgain" id="emailAgain"
+				data-validation-matches-message="Must match email address entered above"
+				data-validation-matches-match="email">
+			<p class="help-block">And again, to check for speeling miskates</p>
+		</div>
+	</div>
+	<div class="control-group">
+		<label for="terms-and-conditions" class="control-label">Legal</label>
+		<div class="controls">
+			<label class="checkbox"> <input type="checkbox"
+				data-validation-required-message="You must agree to the terms and conditions"
+				required="" name="terms-and-conditions" id="terms-and-conditions">
+				I agree to the <a href="#">terms and conditions</a>
+			</label>
+			<p class="help-block"></p>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Quality Control</label>
+		<div class="controls">
+			<label class="checkbox"> <input type="checkbox"
+				data-validation-maxchecked-message="You can't have it all ways"
+				data-validation-maxchecked-maxchecked="2"
+				data-validation-minchecked-message="Choose two"
+				data-validation-minchecked-minchecked="2" value="fast"
+				name="qualityControl[]"> Fast
+			</label> <label class="checkbox"> <input type="checkbox"
+				value="cheap" name="qualityControl[]"> Cheap
+			</label> <label class="checkbox"> <input type="checkbox" value="good"
+				name="qualityControl[]"> Good
+			</label>
+			<p class="help-block"></p>
+		</div>
+	</div>
+	<div class="form-actions">
+		<button class="btn btn-primary" type="submit">
+			Test Validation <i class="icon-ok icon-white"></i>
+		</button>
+		<br> (go ahead, nothing is sent anywhere)
+	</div>
+</form>
