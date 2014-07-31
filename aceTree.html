@@ -1,52 +1,5 @@
-<form novalidate="" class="form-horizontal">
-	<div class="control-group">
-		<label for="email" class="control-label">Email address</label>
-		<div class="controls">
-			<input type="email" required="" id="email" name="email">
-			<p class="help-block">Email address we can contact you on</p>
-		</div>
-	</div>
-	<div class="control-group">
-		<label for="emailAgain" class="control-label">Email again</label>
-		<div class="controls">
-			<input type="email" name="emailAgain" id="emailAgain"
-				data-validation-matches-message="Must match email address entered above"
-				data-validation-matches-match="email">
-			<p class="help-block">And again, to check for speeling miskates</p>
-		</div>
-	</div>
-	<div class="control-group">
-		<label for="terms-and-conditions" class="control-label">Legal</label>
-		<div class="controls">
-			<label class="checkbox"> <input type="checkbox"
-				data-validation-required-message="You must agree to the terms and conditions"
-				required="" name="terms-and-conditions" id="terms-and-conditions">
-				I agree to the <a href="#">terms and conditions</a>
-			</label>
-			<p class="help-block"></p>
-		</div>
-	</div>
-	<div class="control-group">
-		<label class="control-label">Quality Control</label>
-		<div class="controls">
-			<label class="checkbox"> <input type="checkbox"
-				data-validation-maxchecked-message="You can't have it all ways"
-				data-validation-maxchecked-maxchecked="2"
-				data-validation-minchecked-message="Choose two"
-				data-validation-minchecked-minchecked="2" value="fast"
-				name="qualityControl[]"> Fast
-			</label> <label class="checkbox"> <input type="checkbox"
-				value="cheap" name="qualityControl[]"> Cheap
-			</label> <label class="checkbox"> <input type="checkbox" value="good"
-				name="qualityControl[]"> Good
-			</label>
-			<p class="help-block"></p>
-		</div>
-	</div>
-	<div class="form-actions">
-		<button class="btn btn-primary" type="submit">
-			Test Validation <i class="icon-ok icon-white"></i>
-		</button>
-		<br> (go ahead, nothing is sent anywhere)
-	</div>
-</form>
+	<script type="text/javascript">
+		jQuery(function($) {
+			$("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+		});
+	</script>
