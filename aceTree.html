@@ -1,3 +1,76 @@
-<script>
-	UE.getEditor('container');
-</script>
+<form class="form-horizontal bv-form" method="post"
+	id="registrationForm" novalidate="novalidate">
+	<div class="form-group has-feedback">
+		<label class="col-lg-3 control-label">Username</label>
+		<div class="col-lg-5">
+			<input type="text" name="username" class="form-control"
+				data-bv-field="username"> <i style="display: none;"
+				class="form-control-feedback" data-bv-icon-for="username"></i>
+
+		</div>
+	</div>
+	<div class="form-group has-feedback">
+		<label class="col-lg-3 control-label">Username Ajax</label>
+		<div class="col-lg-5">
+			<input type="text" id="username_ajax" name="username_ajax"
+				class="form-control" data-bv-field="username_ajax" value="bbb">
+			<input type="hidden" value="bbb" id="old_username"> <i
+				style="display: none;" class="form-control-feedback"
+				data-bv-icon-for="username"></i>
+		</div>
+	</div>
+	<div class="form-group has-feedback">
+		<label class="col-lg-3 control-label">Email address</label>
+		<div class="col-lg-5">
+			<input type="text" name="email" class="form-control"
+				data-bv-field="email"><i style="display: none;"
+				class="form-control-feedback" data-bv-icon-for="email"></i>
+		</div>
+	</div>
+	<div class="form-group has-feedback">
+		<label class="col-lg-3 control-label">Password</label>
+		<div class="col-lg-5">
+			<input type="password" name="password" class="form-control"
+				data-bv-field="password"><i style="display: none;"
+				class="form-control-feedback" data-bv-icon-for="password"></i>
+
+		</div>
+	</div>
+	<div class="form-group has-feedback">
+		<label class="col-lg-3 control-label">Gender</label>
+		<div class="col-lg-5">
+			<div class="radio">
+				<label> <input type="radio" value="male" name="gender"
+					data-bv-field="gender"> Male
+				</label>
+			</div>
+			<div class="radio">
+				<label> <input type="radio" value="female" name="gender"
+					data-bv-field="gender"> Female
+				</label>
+			</div>
+			<div class="radio">
+				<label> <input type="radio" value="other" name="gender"
+					data-bv-field="gender"> Other
+				</label><i style="display: none;" class="form-control-feedback"
+					data-bv-icon-for="gender"></i>
+			</div>
+
+		</div>
+	</div>
+	<div class="form-group has-feedback">
+		<label class="col-lg-3 control-label">Date of birth</label>
+		<div class="col-lg-5">
+			<input type="text" placeholder="YYYY/MM/DD" name="birthday"
+				class="form-control" data-bv-field="birthday"><i
+				style="display: none;" class="form-control-feedback"
+				data-bv-icon-for="birthday"></i>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-lg-9 col-lg-offset-3">
+			<!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+			<button class="btn btn-default" type="submit">Sign up</button>
+		</div>
+	</div>
+</form>
